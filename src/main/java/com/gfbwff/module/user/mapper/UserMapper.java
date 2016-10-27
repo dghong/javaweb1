@@ -1,18 +1,18 @@
 package com.gfbwff.module.user.mapper;
 
-import com.generator.pojo.User;
-import com.generator.pojo.UserKey;
+
+import com.gfbwff.module.user.pojo.User;
 
 public interface UserMapper {
-    int deleteByPrimaryKey(UserKey key);
+//    int deleteByPrimaryKey(UserKey key);
+//
+//    int insert(User record);
+//
+//    int insertSelective(User record);
 
-    int insert(User record);
+    User selectByPrimaryKey(Long userId);
 
-    int insertSelective(User record);
-
-    User selectByPrimaryKey(UserKey key);
-
-    int updateByPrimaryKeySelective(User record);
-
-    int updateByPrimaryKey(User record);
+//    int updateByPrimaryKeySelective(User record);
+//
+//    int updateByPrimaryKey(User record);
 }

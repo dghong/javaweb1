@@ -1,8 +1,8 @@
 package com.gfbwff.module.user.pojo;
 
-import com.generator.pojo.UserKey;
+public class User {
+    private Integer userid;
 
-public class User extends UserKey {
     private String username;
 
     private String userpassword;
@@ -10,6 +10,13 @@ public class User extends UserKey {
     private String useremail;
 
     private String userphone;
+    public Integer getUserid() {
+        return userid;
+    }
+
+    public void setUserid(Integer userid) {
+        this.userid = userid;
+    }
 
     public String getUsername() {
         return username;

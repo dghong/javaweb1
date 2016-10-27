@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.generator.mapper.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.generator.pojo.User" >
+<mapper namespace="com.gfbwff.module.user.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="com.gfbwff.module.user.pojo.User" >
     <id column="userid" property="userid" jdbcType="INTEGER" />
     <result column="username" property="username" jdbcType="CHAR" />
     <result column="userpassword" property="userpassword" jdbcType="CHAR" />
@@ -11,23 +11,23 @@
   <sql id="Base_Column_List" >
     userid, username, userpassword, useremail, userphone
   </sql>
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.generator.pojo.UserKey" >
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="com.gfbwff.module.user.pojo.User" >
     select 
     <include refid="Base_Column_List" />
     from user
     where userid = #{userid,jdbcType=INTEGER}
   </select>
-  <delete id="deleteByPrimaryKey" parameterType="com.generator.pojo.UserKey" >
+  <delete id="deleteByPrimaryKey" parameterType="com.gfbwff.module.user.pojo.User" >
     delete from user
     where userid = #{userid,jdbcType=INTEGER}
   </delete>
-  <insert id="insert" parameterType="com.generator.pojo.User" >
+  <insert id="insert" parameterType="com.gfbwff.module.user.pojo.User" >
     insert into user (userid, username, userpassword, 
       useremail, userphone)
     values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=CHAR}, #{userpassword,jdbcType=CHAR}, 
       #{useremail,jdbcType=CHAR}, #{userphone,jdbcType=CHAR})
   </insert>
-  <insert id="insertSelective" parameterType="com.generator.pojo.User" >
+  <insert id="insertSelective" parameterType="com.gfbwff.module.user.pojo.User" >
     insert into user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="userid != null" >
@@ -64,7 +64,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.generator.pojo.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.gfbwff.module.user.pojo.User" >
     update user
     <set >
       <if test="username != null" >
@@ -82,7 +82,7 @@
     </set>
     where userid = #{userid,jdbcType=INTEGER}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.generator.pojo.User" >
+  <update id="updateByPrimaryKey" parameterType="com.gfbwff.module.user.pojo.User" >
     update user
     set username = #{username,jdbcType=CHAR},
       userpassword = #{userpassword,jdbcType=CHAR},

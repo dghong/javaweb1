@@ -18,15 +18,6 @@
 </head>
 <body>
 
-登录名：${user.sysUserLoginName}
-
-<br>
-
-真实姓名：${user.sysUserRealName}
-
-<br />
-
-密码：${user.sysUserLoginPassword}
 
 </body>
 </html>
