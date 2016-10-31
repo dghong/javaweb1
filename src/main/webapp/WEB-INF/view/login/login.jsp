@@ -12,12 +12,17 @@
     <title>登录</title>
 </head>
 <body>
-    <c:if test=""></c:if>
+    <c:if test="${!empty username}">
+        用户名${username}不存在
+    </c:if>
+    <c:if test="${!empty message}">
+        ${message}
+    </c:if>
 
   <form action="/login/login" method="post">
 
       姓名:<input type="text" id="username" name="username" /><br />
-      密码:<input type="password" id="password" name="password" /><br />
+      密码:<input type="password" id="password" name="userpassword" /><br />
       <input type="submit" value="提交" />
   </form>
 </body>

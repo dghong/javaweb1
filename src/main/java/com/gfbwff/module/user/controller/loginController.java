@@ -42,10 +42,18 @@ public class loginController {
 //        System.out.println(users.get(1).getUsername());
 //        System.out.println(user.getUsername());
         for (User users : userList){
-            if(user.getUsername().equals(users.getUsername())){
+            if(user.getUsername().equals(users.getUsername()) && user.getUserpassword().equals(users.getUserpassword())){
                 model.addAttribute("username",user.getUsername());
                 return "showUser";
             }
+        }
+        if(user.getUsername() == "" || user.getUsername() == null){
+            model.addAttribute("message","用户名不能为空");
+            return "login/login";
+        }
+        if(user.getUserpassword() == "" || user.getUserpassword() == null){
+            model.addAttribute("message","密码不能为空");
+            return "login/login";
         }
         model.addAttribute("username",user.getUsername());
         return "login/login";
