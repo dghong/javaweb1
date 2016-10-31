@@ -6,6 +6,7 @@ import com.gfbwff.module.user.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * Created by gfbaiwff on 2016/10/26.
@@ -19,6 +20,16 @@ public class UserServiceImpl implements UserService{
 
     @Override
     public User selectByPrimaryKey(Long id) {
+        return userMapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<User> selectAll() {
+        return userMapper.selectAll();
+    }
+
+    @Override
+    public User getById(Long id) {
         return userMapper.selectByPrimaryKey(id);
     }
 }

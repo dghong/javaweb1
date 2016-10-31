@@ -1,0 +1,6 @@
+com\gfbwff\module\user\controller\regsiter.class
+com\gfbwff\module\user\mapper\UserMapper.class
+com\gfbwff\module\user\controller\loginController.class
+com\gfbwff\module\user\service\UserService.class
+com\gfbwff\module\user\pojo\User.class
+com\gfbwff\module\user\service\impl\UserServiceImpl.class
