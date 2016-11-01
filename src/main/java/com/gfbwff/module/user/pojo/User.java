@@ -10,6 +10,8 @@ public class User {
     private String useremail;
 
     private String userphone;
+
+    private String usercollege;
     public Integer getUserid() {
         return userid;
     }
@@ -48,5 +50,13 @@ public class User {
 
     public void setUserphone(String userphone) {
         this.userphone = userphone == null ? null : userphone.trim();
+    }
+
+    public String getUsercollege() {
+        return usercollege;
+    }
+
+    public void setUsercollege(String usercollege) {
+        this.usercollege = usercollege;
     }
 }

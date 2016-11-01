@@ -1,0 +1,29 @@
+div{margin:20px;}
+.input-group-addon{
+    width: 95px;
+    height: 45px;
+}
+.form-control{
+    width:502px;
+    height: 45px;
+}
+.input-group .form-control {
+    position: relative;
+    z-index: 2;
+    float: left;
+    width: 402px;
+    margin-bottom: 0;
+}
+
+.btn-block {
+    display: block;
+    width: 496px;
+    margin-left: 21px;
+}
+#cut{
+    width: 309px;
+}
+.input-group-btn:last-child > .btn, .input-group-btn:last-child > .btn-group {
+    margin-left: -91px;
+    height: 45px;
+}

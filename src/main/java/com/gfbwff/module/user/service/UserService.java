@@ -11,4 +11,5 @@ public interface UserService {
     User selectByPrimaryKey(Long id);
     List<User> selectAll();
     User getById(Long id);
+    User insert(User user);
 }

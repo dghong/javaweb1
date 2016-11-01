@@ -3,6 +3,7 @@ package com.gfbwff.module.user.controller;
 import com.gfbwff.module.user.pojo.User;
 import com.gfbwff.module.user.service.UserService;
 import com.gfbwff.module.user.service.impl.UserServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,7 +21,7 @@ import java.util.List;
 @RequestMapping("/login")
 public class loginController {
 
-    @Resource
+    @Autowired
     private UserService userService;
 
     @RequestMapping("/index")
@@ -39,14 +40,6 @@ public class loginController {
     @RequestMapping("/login")
     public String login(User user,Model model){
         List<User> userList = userService.selectAll();
-//        System.out.println(users.get(1).getUsername());
-//        System.out.println(user.getUsername());
-        for (User users : userList){
-            if(user.getUsername().equals(users.getUsername()) && user.getUserpassword().equals(users.getUserpassword())){
-                model.addAttribute("username",user.getUsername());
-                return "showUser";
-            }
-        }
         if(user.getUsername() == "" || user.getUsername() == null){
             model.addAttribute("message","用户名不能为空");
             return "login/login";
@@ -55,7 +48,12 @@ public class loginController {
             model.addAttribute("message","密码不能为空");
             return "login/login";
         }
-        model.addAttribute("username",user.getUsername());
+        for (User users : userList){
+            if(user.getUsername().equals(users.getUsername()) && user.getUserpassword().equals(users.getUserpassword())){
+                model.addAttribute("username",user.getUsername());
+                return "showUser";
+            }
+        }
         return "login/login";
     }
 }

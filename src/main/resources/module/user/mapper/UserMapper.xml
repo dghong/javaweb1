@@ -7,9 +7,10 @@
     <result column="userpassword" property="userpassword" jdbcType="CHAR" />
     <result column="useremail" property="useremail" jdbcType="CHAR" />
     <result column="userphone" property="userphone" jdbcType="CHAR" />
+    <result column="usercollege" property="usercollege" jdbcType="CHAR" />
   </resultMap>
   <sql id="Base_Column_List" >
-    userid, username, userpassword, useremail, userphone
+    userid, username, userpassword, useremail, userphone,usercollege
   </sql>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long" >
     select 
@@ -29,9 +30,9 @@
 
   <insert id="insert" parameterType="com.gfbwff.module.user.pojo.User" >
     insert into user (userid, username, userpassword, 
-      useremail, userphone)
+      useremail, userphone,usercollege)
     values (#{userid,jdbcType=INTEGER}, #{username,jdbcType=CHAR}, #{userpassword,jdbcType=CHAR}, 
-      #{useremail,jdbcType=CHAR}, #{userphone,jdbcType=CHAR})
+      #{useremail,jdbcType=CHAR}, #{userphone,jdbcType=CHAR},#{usercollege,jdbcType=CHAR})
   </insert>
   <insert id="insertSelective" parameterType="com.gfbwff.module.user.pojo.User" >
     insert into user
@@ -51,6 +52,9 @@
       <if test="userphone != null" >
         userphone,
       </if>
+      <if test="usercollege != null" >
+        usercollege,
+      </if>
     </trim>
     <trim prefix="values (" suffix=")" suffixOverrides="," >
       <if test="userid != null" >
@@ -67,6 +71,9 @@
       </if>
       <if test="userphone != null" >
         #{userphone,jdbcType=CHAR},
+      </if>
+      <if test="usercollege != null" >
+        #{usercollege,jdbcType=CHAR},
       </if>
     </trim>
   </insert>
@@ -85,6 +92,9 @@
       <if test="userphone != null" >
         userphone = #{userphone,jdbcType=CHAR},
       </if>
+      <if test="usercollege != null" >
+        usercollege = #{usercollege,jdbcType=CHAR},
+      </if>
     </set>
     where userid = #{userid,jdbcType=INTEGER}
   </update>
@@ -93,7 +103,8 @@
     set username = #{username,jdbcType=CHAR},
       userpassword = #{userpassword,jdbcType=CHAR},
       useremail = #{useremail,jdbcType=CHAR},
-      userphone = #{userphone,jdbcType=CHAR}
+      userphone = #{userphone,jdbcType=CHAR},
+      usercollege = #{usercollege,jdbcType=CHAR}
     where userid = #{userid,jdbcType=INTEGER}
   </update>
 </mapper>

@@ -20,7 +20,6 @@
     </c:if>
 
   <form action="/login/login" method="post">
-
       姓名:<input type="text" id="username" name="username" /><br />
       密码:<input type="password" id="password" name="userpassword" /><br />
       <input type="submit" value="提交" />
